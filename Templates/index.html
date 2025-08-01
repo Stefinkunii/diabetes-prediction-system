@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome | Diabetes Prediction System</title>
+    <style>
+        body {
+            background-image: url("{{ url_for('static', filename='images/bg.jpg') }}");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            color: #ffffff;
+            padding-top: 100px;
+            height: 100vh;
+            margin: 0;
+        }
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 5px #000;
+        }
+        .logo {
+            width: 150px;
+            margin-bottom: 30px;
+        }
+        .start-btn {
+            background-color: #28a745;
+            border: none;
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            font-size: 1.2rem;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        .start-btn:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="logo">
+    <h1>Welcome to Diabetes Prediction System</h1>
+    <a href="{{ url_for('form') }}" class="start-btn">Start Prediction</a>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Diabetes Prediction</title>
+    <style>
+        body {
+            background-image: url("{{ url_for('static', filename='images/bg.jpg') }}");
+            background-size: cover;
+            background-position: center;
+            font-family: Arial, sans-serif;
+            color: #fff;
+            padding-top: 50px;
+            text-align: center;
+        }
+
+        h2 {
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        form {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            width: 350px;
+            margin: 0 auto;
+            color: #000;
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+            color: #000;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            margin-top: 20px;
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .result {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #e0f7fa;
+            color: #00796b;
+            border: 1px solid #00796b;
+            border-radius: 5px;
+            text-align: center;
+            width: 350px;
+            margin: 20px auto 0;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Diabetes Prediction Form</h2>
+    
+   <form action="/predict" method="POST">
+    <label for="pregnancies">Pregnancies (0 - 17)</label>
+    <input type="text" name="Pregnancies" id="pregnancies" required>
+
+    <label for="glucose">Glucose (0 - 200 mg/dL)</label>
+    <input type="text" name="Glucose" id="glucose" required>
+
+    <label for="bp">Blood Pressure (0 - 122 mm Hg)</label>
+    <input type="text" name="BloodPressure" id="bp" required>
+
+    <label for="skin">Skin Thickness (0 - 99 mm)</label>
+    <input type="text" name="SkinThickness" id="skin" required>
+
+    <label for="insulin">Insulin (0 - 846 mu U/ml)</label>
+    <input type="text" name="Insulin" id="insulin" required>
+
+    <label for="bmi">BMI (0 - 67.1 kg/m²)</label>
+    <input type="text" name="BMI" id="bmi" required>
+
+    <label for="dpf">Diabetes Pedigree Function (0.08 - 2.42)</label>
+    <input type="text" name="DiabetesPedigreeFunction" id="dpf" required>
+
+    <label for="age">Age (21 - 81 years)</label>
+    <input type="text" name="Age" id="age" required>
+
+    <button type="submit">Predict</button>
+</form>
+
+
+    {% if prediction_text %}
+        <div class="result">{{ prediction_text }}</div>
+    {% endif %}
+
+</body>
+</html>
