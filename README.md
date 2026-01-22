@@ -1,22 +1,9 @@
-# 🩺 Diabetes Prediction System
+# Diabetes Prediction System
 
 A machine learning web application built with Flask that predicts whether a person is diabetic or not based on medical input data. It uses the **Random Forest Classifier** trained on the **PIMA Indians Diabetes Dataset**.
 
----
 
-## 🚀 Features
-
-- 📊 Predicts diabetic/non-diabetic status from input features
-- 💻 Simple and user-friendly web interface (HTML + CSS)
-- 🔄 Preprocessing includes:
-  - Handling zero/impossible values
-  - Feature scaling using MinMaxScaler
-  - Handling class imbalance using SMOTE
-- 🧠 Model trained using RandomForestClassifier
-
----
-
-## 🛠️ Tech Stack
+## Tech Stack
 
 - Python
 - Flask
@@ -25,9 +12,8 @@ A machine learning web application built with Flask that predicts whether a pers
 - NumPy / Pandas
 - imbalanced-learn (SMOTE)
 
----
 
-## 📥 Input Features
+## Input Features
 
 | Feature                  | Expected Range         |
 |--------------------------|------------------------|
@@ -42,7 +28,7 @@ A machine learning web application built with Flask that predicts whether a pers
 
 ---
 
-## 💡 How to Run Locally
+## How to Run Locally
 
 1. **Clone the repository**
 
